@@ -47,6 +47,16 @@ object Life {
     println
   }
 
+  def getString(game: Game): String = {
+    var text = ""
+    val listOfStrings = for (row <- game) yield(row map { case 1 => "█" case 0 => "░" } mkString (" "))
+
+    for (row <- listOfStrings) {
+      text += row +"\n"
+    }
+    return text
+  }
+
   def nextGeneration(game: Game): Game = {
     for {
       (row, i) <- game.zipWithIndex

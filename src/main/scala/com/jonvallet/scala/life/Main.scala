@@ -9,11 +9,10 @@ object Main {
   def main(args: Array[String]): Unit = {
     val gameStream = gameOfLife(generate(100, 100))
 
-    for {
-      game <- gameStream
-      continue = readLine()
-    } show(game)
-
+    for (game <- gameStream) {
+      show(game)
+      Thread.sleep(100L)
+    }
 
   }
 
