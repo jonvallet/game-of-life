@@ -7,7 +7,7 @@ import scala.swing._
 import scala.swing.event.ButtonClicked
 import com.jonvallet.scala.life.Life._
 
-object GameOfLifeSwing extends SimpleSwingApplication {
+object GameOfLife extends SimpleSwingApplication {
 
   val gameWindow = new TextArea
   var gameIterator = gameOfLife(generate(50, 100)).iterator
@@ -18,7 +18,7 @@ object GameOfLifeSwing extends SimpleSwingApplication {
       override def actionPerformed(e: ActionEvent): Unit = gameWindow.text = getString(gameIterator.next)
     }
     val timer = new Timer(100, taskPerformer)
-    title = "My Frame"
+    title = "Game of life"
     location = new Point(50, 50)
     contents = new BoxPanel(Orientation.Vertical) {
       gameWindow.text = getString(gameIterator.next)
