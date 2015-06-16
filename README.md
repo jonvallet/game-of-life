@@ -1,7 +1,7 @@
 # game-of-life
-The game on life in scala
+The game of life in scala
 
-Start the sbt and then run
+Start sbt and then run
     
     runMain com.jonvallet.scala.life.GameOfLife
 
